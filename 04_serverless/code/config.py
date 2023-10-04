@@ -1,0 +1,1 @@
+API_URL = 'https://XXXXXXXXX.execute-api.ap-northeast-1.amazonaws.com/test'
