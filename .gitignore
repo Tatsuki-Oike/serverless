@@ -2,3 +2,4 @@ __pycache__
 venv
 model.pth
 output.jpg
+.DS_Store
