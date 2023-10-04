@@ -1,50 +1,3 @@
-# 0 AWSのサービス
-
-## 0.1 サービス作成
-
-* モデル保存用のS3の作成
-  * アクセス許可設定
-* ECRでリポジトリ作成
-* cloud9の環境利用
-  * EC2のストレージ変更(100GB)
-
-<br>
-バケットポリシー変更
-
-```js
-{
-    "Version": "2012-10-17",
-    "Statement": [
-        {
-            "Sid": "PublicRead",
-            "Effect": "Allow",
-            "Principal": "*",
-            "Action": "s3:GetObject",
-            "Resource": "arn:aws:s3:::bucket-name/*"
-        }
-    ]
-}
-```
-
-## 0.2 ストレージの容量変更
-
-```sh
-df -h
-lsblk
-sudo resize2fs /dev/<lsblkで表示されるファイル>
-sudo reboot
-df -h
-```
-
-## 0.3 Gitでソースコードclone
-
-```sh
-sudo yum install -y git
-git --version
-git clone https://github.com/Tatsuki-Oike/aws_service.git
-cd ./serverless
-```
-
 # 1 学習済みモデルの準備
 
 ```sh
@@ -92,6 +45,54 @@ docker container prune -f
 ```
 
 <br>
+
+# 3 AWSサービスを利用してデプロイ
+
+## 3.1 サービス作成
+
+* モデル保存用のS3の作成
+  * アクセス許可設定
+  * モデルをアップロード
+* ECRでリポジトリ作成
+* cloud9の環境利用
+  * EC2のストレージ変更(100GB)
+
+<br>
+バケットポリシー変更
+
+```js
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "PublicRead",
+            "Effect": "Allow",
+            "Principal": "*",
+            "Action": "s3:GetObject",
+            "Resource": "arn:aws:s3:::bucket-name/*"
+        }
+    ]
+}
+```
+
+## 3.2 ストレージの容量変更
+
+```sh
+df -h
+lsblk
+sudo resize2fs /dev/<lsblkで表示されるファイル>
+sudo reboot
+df -h
+```
+
+## 3.3 Gitでソースコードclone
+
+```sh
+sudo yum install -y git
+git --version
+git clone https://github.com/Tatsuki-Oike/aws_service.git
+cd ./serverless
+```
 
 # 3 ECRにイメージをデプロイ
 
