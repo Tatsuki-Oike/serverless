@@ -2,11 +2,29 @@
 
 ## 0.1 サービス作成
 
-* cloud9の環境利用
-  * EC2のストレージ変更(100GB)
 * モデル保存用のS3の作成
   * アクセス許可設定
 * ECRでリポジトリ作成
+* cloud9の環境利用
+  * EC2のストレージ変更(100GB)
+
+<br>
+バケットポリシー変更
+
+```js
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "PublicRead",
+            "Effect": "Allow",
+            "Principal": "*",
+            "Action": "s3:GetObject",
+            "Resource": "arn:aws:s3:::bucket-name/*"
+        }
+    ]
+}
+```
 
 ## 0.2 ストレージの容量変更
 
@@ -18,8 +36,14 @@ sudo reboot
 df -h
 ```
 
-<br>
+## 0.3 Gitでソースコードclone
 
+```sh
+sudo yum install -y git
+git --version
+git clone https://github.com/Tatsuki-Oike/aws_service.git
+cd ./serverless
+```
 
 # 1 学習済みモデルの準備
 
@@ -41,9 +65,12 @@ python3 model.py
 
 ```sh
 cd ../app
-docker build -t docker-image:test .
-docker run --rm --name lambda_container -p 9000:8080 docker-image:test
+docker build -t detection-image:test .
+docker run --rm --name lambda_container -p 9000:8080 detection-image:test
 ```
+
+<br>
+ターミナルをもう一つ作成
 
 ```sh
 cd ./07_lambda_docker/test/code
@@ -73,3 +100,7 @@ docker container prune -f
 <br>
 
 # 4 Lambdaにデプロイ
+
+* Lambdaを作成
+  * 設定でメモリと時間変更
+* API gatewayを作成
