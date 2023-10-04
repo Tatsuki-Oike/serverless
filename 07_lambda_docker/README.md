@@ -1,5 +1,7 @@
 # 1 学習済みモデルの準備
 
+## 1.1 学習済みモデルのダウンロード
+
 ```sh
 cd ./07_lambda_docker/model
 python3 -m venv venv
@@ -10,6 +12,30 @@ python3 -m pip install -r ../app/requirements.txt
 
 ```sh
 python3 model.py
+```
+
+## 1.2 S3に学習済みモデルのアップロード
+
+* モデル保存用のS3の作成
+  * アクセス許可設定
+  * モデルをアップロード
+
+<br>
+バケットポリシー変更
+
+```js
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "PublicRead",
+            "Effect": "Allow",
+            "Principal": "*",
+            "Action": "s3:GetObject",
+            "Resource": "arn:aws:s3:::bucket-name/*"
+        }
+    ]
+}
 ```
 
 <br>
@@ -34,14 +60,16 @@ python3 -m pip install requests
 python3 -m pip install pillow
 ```
 
+<br>
+DEBUG_FLG = True
+
 ```sh
+python3 resize.py
 python3 test.py
 ```
 
 ```sh
-docker image rm docker-image:test
-docker image prune -a
-docker container prune -f
+docker image rm detection-image:test
 ```
 
 <br>
@@ -50,30 +78,9 @@ docker container prune -f
 
 ## 3.1 サービス作成
 
-* モデル保存用のS3の作成
-  * アクセス許可設定
-  * モデルをアップロード
 * ECRでリポジトリ作成
 * cloud9の環境利用
   * EC2のストレージ変更(100GB)
-
-<br>
-バケットポリシー変更
-
-```js
-{
-    "Version": "2012-10-17",
-    "Statement": [
-        {
-            "Sid": "PublicRead",
-            "Effect": "Allow",
-            "Principal": "*",
-            "Action": "s3:GetObject",
-            "Resource": "arn:aws:s3:::bucket-name/*"
-        }
-    ]
-}
-```
 
 ## 3.2 ストレージの容量変更
 
@@ -88,19 +95,18 @@ df -h
 ## 3.3 Gitでソースコードclone
 
 ```sh
-sudo yum install -y git
 git --version
-git clone https://github.com/Tatsuki-Oike/aws_service.git
-cd ./serverless
+git clone https://github.com/Tatsuki-Oike/serverless.git
+cd ./serverless/07_lambda_docker/app
 ```
 
-# 3 ECRにイメージをデプロイ
+# 4 ECRにイメージをデプロイ
 
 * ECRのリボジトリのプッシュ方法をコピペ
 
 <br>
 
-# 4 Lambdaにデプロイ
+# 5 Lambdaにデプロイ
 
 * Lambdaを作成
   * 設定でメモリと時間変更

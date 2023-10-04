@@ -2,7 +2,7 @@ import base64
 import requests
 
 # 設定
-DEBUG_FLG = False
+DEBUG_FLG = True
 
 if DEBUG_FLG:
     API_URL = "http://localhost:9000/2015-03-31/functions/function/invocations"
