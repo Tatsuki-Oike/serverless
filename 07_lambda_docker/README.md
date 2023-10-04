@@ -108,6 +108,21 @@ cd ./serverless/07_lambda_docker/app
 
 # 5 Lambdaにデプロイ
 
+## 5.1 AWSサービス
+
 * Lambdaを作成
   * 設定でメモリと時間変更
 * API gatewayを作成
+
+## 5.2 テスト
+
+* Lambdaでテスト
+* ローカルからテスト
+
+<br>
+cloud9からローカルに移動
+DEBUG_FLG = False
+
+```sh
+python3 test.py
+```
