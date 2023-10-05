@@ -13,11 +13,20 @@ docker image rm lambda-zip
 
 ## 2.1 zipファイルなしでLambda関数テスト
 
-* Lambda関数作成して以下の文追加
+* Lambda関数作成
 * テスト
 
 ```python
+import json
 import requests
+
+def lambda_handler(event, context):
+    # TODO implement
+    return {
+        'statusCode': 200,
+        'body': json.dumps(str(requests.__version__))
+    }
+
 ```
 
 <br>
