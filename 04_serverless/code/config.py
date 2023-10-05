@@ -1,1 +1,1 @@
-API_URL = 'https://f8lmbp2i54.execute-api.ap-northeast-1.amazonaws.com/test'
+API_URL = 'https://XXXXXXXXX.execute-api.ap-northeast-1.amazonaws.com/test'
