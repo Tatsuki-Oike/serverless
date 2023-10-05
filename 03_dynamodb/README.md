@@ -1,8 +1,6 @@
 # 0 AWS
 
 * DynamoDBの作成
-  * TableName
-  * 項目と型
 * Lambda関数の作成
   * DynamoDBフルアクセスの権限追加
 
