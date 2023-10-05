@@ -35,7 +35,8 @@ def lambda_handler(event, context):
 ```js
 {
     "key1": "value1",
-    "key2": "value2"
+    "key2": "value2",
+    "key3": "value3"
 }
 ```
 

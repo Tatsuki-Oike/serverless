@@ -1,6 +1,6 @@
 import requests
 
-API_URL = 'https://XXXXXXXXX.execute-api.ap-northeast-1.amazonaws.com/test'
+API_URL = 'https://vki9t6z599.execute-api.ap-northeast-1.amazonaws.com/test'
 PARAMS = {
     'key1': 'value1',
     'key2': 'value2'
