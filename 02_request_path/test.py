@@ -4,7 +4,7 @@ import requests
 
 # 0 設定
 
-API_URL = 'https://z1nd5lso02.execute-api.ap-northeast-1.amazonaws.com/test'
+API_URL = 'https://XXXXXXXXX.execute-api.ap-northeast-1.amazonaws.com/test'
 DATA = {
     'key1': 'value1',
     'key2': 'value2'
