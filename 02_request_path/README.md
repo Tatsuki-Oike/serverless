@@ -36,9 +36,9 @@ def lambda_handler(event, context):
 response = {
     "status": "SUCCESS",
     "event": event,
-    "query": event['queryStringParameters'], # GET, DELETE
-    "data": event["body"], # POST, PUT, PATCH
-    "params": event['pathParameters'], # パスパラメータ
+    "query": event.get('queryStringParameters'), # GET, DELETE
+    "data": event.get('body'), # POST, PUT, PATCH
+    "params": event.get('pathParameters'), # パスパラメータ
     }
 ```
 
