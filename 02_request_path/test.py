@@ -51,13 +51,11 @@ USER_URL = os.path.join(API_URL, "user")
 ID_URL = os.path.join(API_URL, "1")
 
 ## 2.1 USER GETリクエストを送信
-print("--------------------------------------")
 print("USER GET")
 response = requests.get(USER_URL, params=DATA)
 response_function(response)
 
 ## 2.2 ID GETリクエストを送信
-print("--------------------------------------")
 print("ID GET")
 response = requests.get(ID_URL, params=DATA)
 response_function(response)
