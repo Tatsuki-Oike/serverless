@@ -33,15 +33,6 @@ def lambda_handler(event, context):
 ```
 
 <br>
-```python
-response = {
-    "status": "SUCCESS",
-    "event": event,
-    "query": event.get('queryStringParameters'), # GET, DELETE
-    "data": event.get('body'), # POST, PUT, PATCH
-    "params": event.get('pathParameters'), # パスパラメータ
-    }
-```
 
 # 2 Pythonでテスト
 
