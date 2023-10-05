@@ -146,7 +146,7 @@ Scan (条件一致)
 from boto3.dynamodb.conditions import Attr
 
 table_items = table.scan(
-    FilterExpression=Attr("username").eq("Name 4")
+    FilterExpression=Attr("username").eq("Name 4"),
     ProjectionExpression="username"
 )
 db_resp = {
