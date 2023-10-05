@@ -15,7 +15,9 @@ def lambda_handler(event, context):
     try:
         response = {
             "status": "SUCCESS",
-            "event": event,
+            "query": event.get('queryStringParameters'), # GET, DELETE
+            "data": event.get('body'), # POST, PUT, PATCH
+            "params": event.get('pathParameters'), # パスパラメータ
         }
         status_code = 200
     except Exception as e:
