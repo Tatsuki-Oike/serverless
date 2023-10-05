@@ -3,3 +3,5 @@ venv
 model.pth
 output.jpg
 .DS_Store
+library.zip
+python

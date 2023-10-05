@@ -29,6 +29,7 @@ def lambda_handler(event, context):
 
 ```
 
+
 <br>
 
 # 2.2 zipファイルを追加してLambda関数テスト
