@@ -21,7 +21,7 @@ def lambda_handler(event, context):
         
         db_resp = table.put_item(
             Item={
-                "user_id": 0,
+                "user_id": "0",
                 "username": "Tatsuki"
                 }
             )
@@ -48,7 +48,7 @@ DynamoDBのitem取得
 
 ```python
 db_resp = table.get_item(
-            Key={"user_id": 0}
+            Key={"user_id": "0"}
         )
 ```
 
@@ -57,21 +57,8 @@ DynamoDBのitem更新
 
 ```python
 db_resp = table.update_item(
-            Key={"user_id": 0},
+            Key={"user_id": "0"},
             UpdateExpression="SET username = :value",
-            ExpressionAttributeValues={
-                ":value": "Akira",
-            }
-        )
-```
-
-```python
-db_resp = table.update_item(
-            Key={"user_id": 0},
-            UpdateExpression="SET #at1 = :value",
-            ExpressionAttributeNames={
-                "#at1": "username"
-            },
             ExpressionAttributeValues={
                 ":value": "Akira",
             }
