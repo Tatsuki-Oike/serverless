@@ -29,5 +29,5 @@ print("--------------------------------------")
 
 # 3 GETリクエストを送信
 print("GET")
-response = requests.get(API_URL, params=DATA)
+response = requests.get(API_URL)
 response_function(response)

@@ -3,7 +3,7 @@ import config
 
 # 0 設定
 API_URL = config.API_URL
-DELETE_DATA = {'image_id': 'XXXXXXXXXXXXXXXXXXXXXXXXXX'}
+DELETE_DATA = {'image_id': '4c19d58f-a951-4504-8b95-195a4e4fc201'}
 
 def response_function(response):
     print('url: ', response.url)

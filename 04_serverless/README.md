@@ -59,7 +59,7 @@ Cross-Origin Resource Sharing (CORS)
 ## 1.1 GETリクエスト
 
 ```python
-iimport json
+import json
 import boto3
 
 bucket_name = "bucket-name"
@@ -71,7 +71,7 @@ table = db.Table(table_name)
 headers = {
         'Content-Type': 'application/json',  # レスポンスのコンテンツタイプを指定
         'Access-Control-Allow-Origin': '*',  # CORSの設定 (すべてのオリジンを許可)
-        'Access-Control-Allow-Methods': 'POST',  # 許可するHTTPメソッドを指定
+        'Access-Control-Allow-Methods': 'GET',  # 許可するHTTPメソッドを指定
         'Access-Control-Allow-Headers': 'Content-Type',  # 許可するカスタムヘッダーを指定
         'Access-Control-Allow-Credentials': 'true'  # クッキーや認証情報を許可
     }
@@ -198,7 +198,7 @@ table = db.Table(table_name)
 headers = {
         'Content-Type': 'application/json',  # レスポンスのコンテンツタイプを指定
         'Access-Control-Allow-Origin': '*',  # CORSの設定 (すべてのオリジンを許可)
-        'Access-Control-Allow-Methods': '*',  # 許可するHTTPメソッドを指定
+        'Access-Control-Allow-Methods': 'DELETE',  # 許可するHTTPメソッドを指定
         'Access-Control-Allow-Headers': 'Content-Type',  # 許可するカスタムヘッダーを指定
         'Access-Control-Allow-Credentials': 'true'  # クッキーや認証情報を許可
     }
