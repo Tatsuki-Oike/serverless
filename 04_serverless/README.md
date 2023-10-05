@@ -238,6 +238,7 @@ def lambda_handler(event, context):
     }
 ```
 
+<br>
 
 # 2 Pythonでテスト
 
