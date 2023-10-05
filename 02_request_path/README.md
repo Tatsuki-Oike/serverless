@@ -1,7 +1,6 @@
 # 0 AWS
 
 * Lambda関数の作成
-  * ６つのlambda関数の作成
 * API Gatewayの作成 (REST API)
   * GET, POST, PUT, PATCH, DELETE作成
   * リソースを追加(user)
