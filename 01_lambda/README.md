@@ -28,6 +28,8 @@ def lambda_handler(event, context):
     }
 ```
 
+<br>
+
 # 2 マネージメントコンソールでテスト
 
 ```js
@@ -36,6 +38,8 @@ def lambda_handler(event, context):
     "key2": "value2"
 }
 ```
+
+<br>
 
 # 3 Pythonでテスト
 
