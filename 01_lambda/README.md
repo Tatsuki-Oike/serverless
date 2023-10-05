@@ -28,7 +28,16 @@ def lambda_handler(event, context):
     }
 ```
 
-# 2 Pythonでテスト
+# 2 マネージメントコンソールでテスト
+
+```js
+{
+    "key1": "value1",
+    "key2": "value2"
+}
+```
+
+# 3 Pythonでテスト
 
 ```sh
 python3 -m venv venv
