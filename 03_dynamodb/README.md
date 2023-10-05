@@ -70,7 +70,7 @@ DynamoDBのitem消去
 
 ```python
 db_resp = table.delete_item(
-            Key={"user_id": 0},
+            Key={"user_id": "0"},
         )
 ```
 
@@ -88,7 +88,7 @@ data = []
 
 for i in range(1, 21):
     item = {
-        "user_id": i,
+        "user_id": str(i),
         "username": f"Name {i}"
     }
     data.append(item)
@@ -107,7 +107,7 @@ Query
 from boto3.dynamodb.conditions import Key
 
 db_resp = table.query(
-            KeyConditionExpression=Key("user_id").eq(3)
+            KeyConditionExpression=Key("user_id").eq("3")
         )
 ```
 
