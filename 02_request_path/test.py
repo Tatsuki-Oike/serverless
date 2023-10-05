@@ -4,7 +4,7 @@ import requests
 
 # 0 設定
 
-API_URL = 'https://XXXXXXXXX.execute-api.ap-northeast-1.amazonaws.com/test'
+API_URL = 'https://z1nd5lso02.execute-api.ap-northeast-1.amazonaws.com/test'
 DATA = {
     'key1': 'value1',
     'key2': 'value2'
@@ -48,7 +48,7 @@ response_function(response)
 
 # 2 パスの変更
 USER_URL = os.path.join(API_URL, "user")
-ID_URL = os.path.join(USER_URL, "1")
+ID_URL = os.path.join(API_URL, "1")
 
 ## 2.1 USER GETリクエストを送信
 print("--------------------------------------")
