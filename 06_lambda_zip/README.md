@@ -11,6 +11,18 @@ docker image rm lambda-zip
 
 # 2 Lambda関数で外部ライブラリ利用
 
-* Lambda関数作成
-  * zipファイルアップロード
-  * import pandas as pd
+## 2.1 zipファイルなしでLambda関数テスト
+
+* Lambda関数作成して以下の文追加
+* テスト
+
+```python
+import requests
+```
+
+<br>
+
+# 2.2 zipファイルを追加してLambda関数テスト
+
+* zipファイルをアップロードしてLambda関数と連携
+* 再度テスト
